@@ -24,73 +24,108 @@
 
 <body>
 
-    <?php
+<?php
 
-    $numeros = [[]];
-    $repositorio = [];
-    $repite = false;
-    $max = 1;
-    $min = 20;
+// VARIABLES
+$numeros = [[]];
+$repositorio = []; // Array simple donde se acumulan todos los valores obtenidos para comprobar que no se repiten
+$repite = false;
+$filas = 6;
+$columnas = 9;
+$a = 100; // Límite inferior del intervalo
+$b = 999; // Límite superior del intervalo
+$max = $a;
+$min = $b;
+$columna_max = 0;
+$fila_min = 0;
 
-    echo "<table>";
 
-    for ($i = 0; $i < 4; $i++) {
-        echo "<tr>";
+// Rellenar el array y obtener máximo y mínimo
+for ($i = 0; $i < $filas; $i++) {
 
-        for ($j = 0; $j < 5; $j++) {
+    for ($j = 0; $j < $columnas; $j++) {
 
-            if ($j == 0 && $i == 0) {
-                $numeros[$i][$j] = rand(1, 20);
-                $repositorio[] = $numeros[$i][$j];
-                echo  "<td>" . $numeros[$i][$j] . " </td>";
-            } else {
+        if ($j == 0 && $i == 0) {
+            $numeros[$i][$j] = rand($a, $b);
+            $repositorio[] = $numeros[$i][$j];
 
-                do {
-                    $aleatorio = rand(1, 20);
-                    $repite = false;
+        }
+        else {
 
-                    foreach ($repositorio as $r) {
-                        if ($r == $aleatorio) {
-                            $repite = true;
-                        }
+            do {
+                $aleatorio = rand($a, $b);
+                $repite = false;
+
+                foreach ($repositorio as $r) {
+                    if ($r == $aleatorio) {
+                        $repite = true;
                     }
-                } while ($repite == true);
+                }
+            } while ($repite == true);
 
 
-                $numeros[$i][$j] = $aleatorio;
-                $repositorio[] = $aleatorio;
-                echo  "<td>" . $numeros[$i][$j] . " </td>";
-            }
-        }
+            $numeros[$i][$j] = $aleatorio;
+            $repositorio[] = $aleatorio;
 
-        echo "</tr>";
-    }
-
-    echo "</table>";
-
-
-    foreach ($repositorio as $a) {
-        if ($a < $min) {
-            $min = $a;
-        }
-        if ($a > $max) {
-            $max = $a;
         }
     }
 
-    echo "<p>" . $min . " es el mínimo</p>";
-    echo "<p>" . $max . " es el máximo</p>";
+
+}
 
 
-    // Buscar posición del máximo y el mínimo
-    $posicion_max = array_search($max, $repositorio);
-  var_dump($posicion_max);
+// Obtener valores máximo y mínimo
+foreach ($repositorio as $r) {
+    if ($r < $min) {
+        $min = $r;
+    }
+    if ($r > $max) {
+        $max = $r;
+    }
+}
 
 
+// Localizar máximo y mínimo
+for ($i = 0; $i < $filas; $i++) {
+
+    for ($j = 0; $j < $columnas; $j++) {
+
+        if ($numeros[$i][$j] == $max) {
+            $columna_max = $j;
+        }
+        else if ($numeros[$i][$j] == $min) {
+            $fila_min = $i;
+        }
+    }
+}
 
 
-    ?>
+// Dibujar la tabla, coloreando la fila del mínimo y la columna del máximo
+echo "<table>";
 
+for ($i = 0; $i < $filas; $i++) {
+
+    if ($i == $fila_min) {
+        echo "<tr style='background-color:orange'>";
+    } else {
+        echo "<tr>";
+    }
+
+    for ($j = 0; $j < $columnas; $j++) {
+
+        if ($j == $columna_max) {
+            echo "<td style='background-color:green'>" . $numeros[$i][$j] . " </td>";
+        } else {
+            echo "<td>" . $numeros[$i][$j] . " </td>";
+        }
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+
+
+?>
 
 </body>
 
