@@ -1,63 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario tabla</title>
     <style>
-        table{
+        table {
             border-collapse: collapse;
             text-align: center;
         }
-        
-    th, td{
-        border: 3px solid grey;
-        width: 20px;
-        padding: 6px;
-    }
+
+        th,
+        td {
+            border: 3px solid grey;
+            width: 20px;
+            padding: 6px;
+        }
     </style>
 </head>
+
 <body>
 
-<?php
+    <?php
 
-$persona1 = ["nombre" => "Alicia", "altura" => 160, "email" => "soyalicia@gmail.com"];
+if(isset($_GET["personas"])){
 
-$persona2 = ["nombre" => "Leonardo", "altura" => 180, "email" => "leogarcia@gmail.com"];
+    $numpersonas = $_GET['personas'];
+    
 
-$persona3 = ["nombre" => "Rita", "altura" => 185, "email" => "santaritarita@gmail.com"];
+    echo "<table>";
 
-$persona4 = ["nombre" => "Dunia", "altura" => 166, "email" => "duniamundo@gmail.com"];
+    echo "<form action='#' method='get'>";
+    echo "<input type='hidden' name='personas' value='$numpersonas'>";
 
-$persona5 = ["nombre" => "Fabián", "altura" => 173, "email" => "fabianpicardo@gmail.com"];
+    for ($i=0; $i<$numpersonas; $i++){
+        echo "<tr>";
+        
+        echo "<td><input type='text' name='nombre$i'></td>";
+        echo "<td><input type='text' name='altura$i'></td>";
+        echo "<td><input type='text' name='email$i'></td>";
 
-$personas = [$persona1, $persona2, $persona3, $persona4, $persona5];
-
-echo "<table>";
-
-echo "<tr>";
-
-    foreach ($persona1 as $clave => $valor){
-        echo "<th>$clave</th>";
+        echo "</tr>";
     }
 
-echo "</tr>";
+    echo "<input type='submit' name='rellenar' value='rellenar'><br>";
+    echo "</form>";
 
-foreach($personas as $p){
-    echo "<tr>";
+    echo "</table>";
+ 
+    if(isset($_GET["rellenar"])){
 
-    foreach ($p as $clave => $valor){
-        echo "<td>$valor</td>";
+        $numpersonas = $_GET['personas']; 
+
+        echo "<table>";
+        echo "<tr>";
+            echo "<th>Nombre</th>";
+            echo "<th>Altura</th>";
+            echo "<th>Email</th>";
+        echo "</tr>";
+
+        echo "<tr>";
+        for ($i=0; $i<$numpersonas; $i++){
+            $nombre = 'nombre'.$i;
+            $celda = $_GET[$nombre];
+            echo "<td>$celda</td>";
+        }
+        echo "</tr>";
+    
+        echo "<tr>";
+        for ($i=0; $i<$numpersonas; $i++){
+            $altura = 'altura'.$i;
+            $celda = $_GET[$altura];
+            echo "<td>$celda</td>";
+        }
+        echo "</tr>";
+
+        echo "<tr>";
+        for ($i=0; $i<$numpersonas; $i++){
+            $email = 'email'.$i;
+            $celda = $_GET[$email];
+            echo "<td>$celda</td>";
+        }
+        echo "</tr>";
+    
+        echo "</table>";
+
+
     }
 
-    echo "</tr>";
-}
 
-echo "</table>";
+
+
+} else {
+
 
 ?>
-    
+
+    <form action="#" method="get">
+        <p><label for="personas">Determina cuántas personas quieres sumar</label>
+            <input type="number" name="personas" id="numpersonas">
+        </p>
+
+        <input type="submit" value="Enviar">
+    </form>
+
 </body>
+
 </html>
