@@ -44,11 +44,8 @@
         echo "</table>";
         echo "<p><input type='submit' name='Aceptar' value='Aceptar'></p>";
         echo "</form>";
-
-        
-
     } elseif (isset($_GET["Aceptar"])) {
-        $items = $_GET['personas'];
+        $personas = $_GET['personas'];
 
         echo "<table>";
         echo "<tr>";
@@ -57,26 +54,32 @@
         echo "<th>Email</th>";
         echo "</tr>";
 
-        for ($i = 0; $i < $items; $i++) {
-            echo "<tr>";
+        $array_pers = [[]];
 
+        for ($i = 0; $i < $personas; $i++) {
             $nombre = 'nombre' . $i;
-            $celda = $_GET[$nombre];
-            echo "<td>$celda</td>";
+            $nom = $_GET[$nombre];
 
             $altura = 'altura' . $i;
-            $celda = $_GET[$altura];
-            echo "<td>$celda</td>";
+            $alt = $_GET[$altura];
 
             $email = 'email' . $i;
-            $celda = $_GET[$email];
-            echo "<td>$celda</td>";
+            $ema = $_GET[$email];
+            array_push($array_pers, [$nom, $alt, $ema]);
 
+        }
+
+        foreach($array_pers as $p){
+            echo "<tr>";
+        
+            foreach ($p as $valor){
+                echo "<td>$valor</td>";
+            }
+        
             echo "</tr>";
         }
 
         echo "</table>";
-
 
 
     } else {
@@ -87,6 +90,7 @@
             <p><label for="personas">Determina cuántas personas quieres sumar</label>
                 <input type="number" name="personas" id="numpersonas">
             </p>
+
             <input type="submit" value="Enviar">
         </form>
 
