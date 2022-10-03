@@ -50,6 +50,7 @@ function soloPares ($arrayPares){
     return $a_pares;
 }
 
+
 echo "Partimos de este array<br>";
 $prueba = arrayAleatorio(10, 0, 20);
 foreach ($prueba as $p){
