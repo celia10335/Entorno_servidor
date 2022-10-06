@@ -49,25 +49,6 @@ function soloPares (&$arrayPares){
 }
 
 
-function duplicarPorValor ($num){
-    $num = 2*$num;
-}
-
-$numero = 5;
-duplicarPorValor($numero);
-
-echo ("Número cuando pasa por valor: ".$numero."<br>");
-
-
-function duplicarPorReferencia (&$num){
-    $num = 2*$num;
-}
-
-
-duplicarPorReferencia($numero);
-
-echo ("Número cuando pasa por referencia: ".$numero."<br>");
-
 echo "Partimos de este array<br>";
 $prueba = arrayAleatorio(10, 0, 20);
 foreach ($prueba as $p){
