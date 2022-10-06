@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones sencillas</title>
 </head>
@@ -35,21 +34,39 @@ function arrayAleatorio(int $tam, int $min, int $max){
 
 
 // Una función que reciba un $array por referencia y devuelva la cantidad de números pares que hay almacenados: arrayPares(array &$array): int
-function soloPares ($arrayPares){
+function soloPares (&$arrayPares){
 
     $j = 0;
-
     foreach($arrayPares as $num){
 
         if ($num%2 == 0){
-            $a_pares [$j] = $num;
+            $a_pares[$j] = $num;
             $j++;
-        }
+        } 
     }
 
-    return $a_pares;
+    $arrayPares = $a_pares;
 }
 
+
+function duplicarPorValor ($num){
+    $num = 2*$num;
+}
+
+$numero = 5;
+duplicarPorValor($numero);
+
+echo ("Número cuando pasa por valor: ".$numero."<br>");
+
+
+function duplicarPorReferencia (&$num){
+    $num = 2*$num;
+}
+
+
+duplicarPorReferencia($numero);
+
+echo ("Número cuando pasa por referencia: ".$numero."<br>");
 
 echo "Partimos de este array<br>";
 $prueba = arrayAleatorio(10, 0, 20);
@@ -59,7 +76,7 @@ foreach ($prueba as $p){
 
 echo "<br>";
 echo "<br>Y obtenemos este otro<br>";
-$prueba = soloPares($prueba);
+soloPares($prueba);
 foreach($prueba as $p){
     echo $p." ";
 }
