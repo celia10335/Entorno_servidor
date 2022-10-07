@@ -17,8 +17,11 @@ function parImpar(int $num){
         $esPar = true;
     }
 
-    return $esPar;
+    $mensaje = ($esPar==true) ? ("El número ".$num." es par") : ("El número ".$num." es impar");
+    echo $mensaje;
 }
+echo ("<p><em>Probando función parImpar: </em></p>");
+parImpar(19);
 
 
 // Una función que devuelva un array de tamaño $tam con números aleatorios comprendido entre $min y $max : arrayAleatorio(int $tam, int $min, int $max) : array
@@ -30,6 +33,12 @@ function arrayAleatorio(int $tam, int $min, int $max){
     }
 
     return $aleatorios;
+}
+echo ("<hr>");
+echo ("<p><em>Probando función arrayAleatorio: </em></p>");
+$numeros = arrayAleatorio(7, -5, 35);
+foreach($numeros as $n){
+    echo ($n." ");
 }
 
 
@@ -48,15 +57,17 @@ function soloPares (&$arrayPares){
     $arrayPares = $a_pares;
 }
 
+echo ("<hr>");
+echo ("<p><em>Probando función soloPares: </em></p>");
 
-echo "Partimos de este array<br>";
+echo "- partimos de este array<br>";
 $prueba = arrayAleatorio(10, 0, 20);
 foreach ($prueba as $p){
     echo $p." ";
 }
 
 echo "<br>";
-echo "<br>Y obtenemos este otro<br>";
+echo "<br>- y obtenemos este otro<br>";
 soloPares($prueba);
 foreach($prueba as $p){
     echo $p." ";
