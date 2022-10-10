@@ -24,7 +24,7 @@
 
 <body>
 
-<?php
+    <?php
 
 // VARIABLES
 $numeros = [[]];
@@ -107,18 +107,28 @@ for ($i = 0; $i < $filas; $i++) {
 
     if ($i == $fila_min) {
         echo "<tr style='background-color:orange'>";
-    } else {
+    }
+    else {
         echo "<tr>";
     }
 
     for ($j = 0; $j < $columnas; $j++) {
 
         if ($j == $columna_max) {
-            echo "<td style='background-color:green'>" . $numeros[$i][$j] . " </td>";
-        } else {
+
+            if ($i == $fila_min) {
+                echo "<td style='background-color:violet'>" . $numeros[$i][$j] . " </td>";
+            }
+            else {
+                echo "<td style='background-color:green'>" . $numeros[$i][$j] . " </td>";
+            }
+        }
+
+        else {
             echo "<td>" . $numeros[$i][$j] . " </td>";
         }
     }
+    
     echo "</tr>";
 }
 

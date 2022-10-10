@@ -44,6 +44,8 @@
         echo "</table>";
         echo "<p><input type='submit' name='Aceptar' value='Aceptar'></p>";
         echo "</form>";
+
+        
     } elseif (isset($_GET["Aceptar"])) {
         $personas = $_GET['personas'];
 
