@@ -31,6 +31,7 @@ function multiplica(...$num){
         foreach($num as $n){
             $producto *= $n;
         }
+        return $producto;
     }
 }
 
