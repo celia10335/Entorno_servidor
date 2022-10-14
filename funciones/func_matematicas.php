@@ -5,14 +5,11 @@ declare(strict_types=1);
 // digitos(int $num): int → devuelve la cantidad de dígitos de un número.
 function digitos(int $num): int
 {
-$cifras = 1;
-
+$cifras = 0;
 do {
-    $num/10;
     $num = $num/10;
     $cifras++;
-
-} while((int)($num/10) > 1);
+} while($num > 1);
 
     return $cifras;
 }
@@ -32,12 +29,12 @@ function digitoN(int $num, int $pos): int{
 }
 
 echo ("Número ".$num."<br>");
-echo ("dígito 1: ".digitoN(201057, 1)."<br>");
-echo ("dígito 2: ".digitoN(201057, 2)."<br>");
-echo ("dígito 3: ".digitoN(201057, 3)."<br>");
-echo ("dígito 4: ".digitoN(201057, 4)."<br>");
-echo ("dígito 5: ".digitoN(201057, 5)."<br>");
-echo ("dígito 6: ".digitoN(201057, 6)."<br>");
+echo ("dígito 1: ".digitoN($num, 1)."<br>");
+echo ("dígito 2: ".digitoN($num, 2)."<br>");
+echo ("dígito 3: ".digitoN($num, 3)."<br>");
+echo ("dígito 4: ".digitoN($num, 4)."<br>");
+echo ("dígito 5: ".digitoN($num, 5)."<br>");
+echo ("dígito 6: ".digitoN($num, 6)."<br>");
 echo ("<hr>");
 
 

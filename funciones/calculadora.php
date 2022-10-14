@@ -40,6 +40,9 @@ if (isset($_GET["operar"])) {
 
     echo ("<h3>El resultado de la operación es " . $resultado . "</h3>");
 
+    // Otra forma más elegante (siempre que el "value" de cada opción coincida con el nombre de las funciones):
+        // echo ("<h3>El resultado de la operación es " . $_GET['operar']($_GET['num1'],$_GET['num2']) . "</h3>");
+
 
 
 }
