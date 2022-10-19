@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones regulares en formularios</title>
+</head>
+
+<body>
+
+    <form name="expresiones" id="expresiones" action="./form_regulares.php" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <p>
+                <label for="exp1">Nombre</label>
+                <input type="text" name="nombre" id='exp1' size="20" maxlength="20" pattern="[A-Z].*[a-zA-Z]{1,20}">
+            </p>
+            <p>
+                <label for="exp2">Apellidos</label>
+                <input type="text" name="apellidos" id='exp2' size="60" maxlength="60" pattern="[A-Z].*[a-zA-Z]{1,60}">
+            </p>
+            <p>
+                <label for="exp3">Dirección</label>
+                <input type="text" name="direccion" id='exp3' size="36" maxlength="36" pattern=".*[a-zA-Z][0-9]{0,36}">
+            </p>
+            <p>
+                <label for="exp4">Teléfono</label>
+                <input type="text" name="tlf" id='exp4' size="36" maxlength="36" pattern="[0-9]{9}">
+            </p>
+        </fieldset>
+        <p><input type="submit" value="enviar"></p>
+    </form>
+
+</body>
+
+</html>
