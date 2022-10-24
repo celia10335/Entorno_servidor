@@ -41,14 +41,14 @@
         for ($j = 0; $j < 8; $j++) {
 
             if ($j == 0 && $i == 0) {
-                $numeros[$i][$j] = rand(1, 20);
+                $numeros[$i][$j] = rand(100, 999);
                 $repositorio[] = $numeros[$i][$j];
                 echo  "<td>" . $numeros[$i][$j] . " </td>";
 
             } else {
 
                 do {
-                    $aleatorio = rand(1, 20);
+                    $aleatorio = rand(100, 999);
                     $repite = false;
 
                     foreach ($repositorio as $r) {
@@ -70,6 +70,11 @@
     }
 
     echo "</table>";
+
+    echo ("repositorio:<br>");
+    foreach($repositorio as $r){
+        echo $r." ";
+    }
 
 
 
