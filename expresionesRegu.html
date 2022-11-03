@@ -10,24 +10,24 @@
 
 <body>
 
-    <form name="expresiones" id="expresiones" action="./form_regulares.php" method="post">
+    <form name="expresiones" id="expresiones" action="form_regulares.php" method="post">
         <fieldset>
             <legend>Datos personales</legend>
             <p>
-                <label for="exp1">Nombre</label>
+                <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id='exp1' size="20" maxlength="20" pattern="[A-Z].*[a-zA-Z]{1,20}">
             </p>
             <p>
-                <label for="exp2">Apellidos</label>
-                <input type="text" name="apellidos" id='exp2' size="60" maxlength="60" pattern="[A-Z].*[a-zA-Z]{1,60}">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id='exp2' size="60" maxlength="60" pattern="[A-Z][a-z]+\s[A-Z][a-z]+">
             </p>
             <p>
-                <label for="exp3">Dirección</label>
-                <input type="text" name="direccion" id='exp3' size="36" maxlength="36" pattern=".*[a-zA-Z][0-9]{0,36}">
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" id='exp3' size="36" maxlength="36" pattern="[a-zA-Z].+\s[0-9]+">
             </p>
             <p>
-                <label for="exp4">Teléfono</label>
-                <input type="text" name="tlf" id='exp4' size="36" maxlength="36" pattern="[0-9]{9}">
+                <label for="tlf">Teléfono</label>
+                <input type="text" name="tlf" id='exp4' size="36" maxlength="36" pattern="[67][0-9]{8}">
             </p>
         </fieldset>
         <p><input type="submit" value="enviar"></p>

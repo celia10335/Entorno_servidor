@@ -8,26 +8,14 @@
 </head>
 <body>
     
-
-
 <?php
-
 
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
 $direccion = $_POST['direccion'];
 $tlf = $_POST['tlf'];
-
-if (isset($_POST['enviar'])){
-
     
-    //echo ("<p>".$nombre."<br>".$apellidos."<br>".$direccion."<br>".$tlf."</p>");
-
-    echo ("<h2>correcto</h2>");
-
-}
-
-
+echo ("<p>".$nombre."<br>".$apellidos."<br>".$direccion."<br>".$tlf."</p>");
 
 ?>
 </body>

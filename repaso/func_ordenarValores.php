@@ -1,37 +1,30 @@
 <?php
 
-function ordenar (...$num){
-    if (func_num_args() == 0) {
-        return false;
-    }
-    else{
-        $enOrden = [];
+function ordenar ($num){
 
-        $mayor = func_get_arg(0);
+        $aux = 0;
+            for ($i=0; $i<count($num); $i++){
 
-        $j = 0;
+                for ($j=0; $j<count($num)-1; $j++){
 
-        for ($j=0; $j<func_num_args(); $j++){
-
-            
-
-            for ($i=1; $i<func_num_args(); $i++){
-
-                if (func_get_arg($i) > $mayor) {
-                    $enOrden[$j] = func_get_arg($i);
-                    $mayor = $enOrden[$j];
+                    if ($num[$i] > $num[$j]) {
+                    $aux = $num[$i];
+                    $num[$i] = $num[$j];
+                    $num[$j] = $aux;
                 }
+                }
+
+                
             }
 
+        return $num;
 
-        }
-
-        return $enOrden;
-
-    }
+    
 }
 
 
-var_dump(ordenar(4,7,13));
+$numeros = [4,7,13,2,31];
+$numOrden = ordenar($numeros);
+var_dump($numOrden);
 
 ?>
