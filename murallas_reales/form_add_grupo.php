@@ -9,11 +9,7 @@
 <body>
 
 <p>Introduzca los datos del grupo</p>
-<form action="POST">
-<p>
-    <label for="idgrupo">Id</label>
-    <input type="number" name="idgrupo">
-</p>
+<form action="inserta_grupo.php" method="POST">
 <p>
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre">

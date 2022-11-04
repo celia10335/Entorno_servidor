@@ -9,7 +9,7 @@
 <body>
 
 <p>Introduzca los datos del alumno</p>
-<form action="POST">
+<form action="inserta_alumno.php" method="POST">
 <p>
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre">
@@ -20,7 +20,7 @@
 </p>
 <p>
     <label for="grupo">Grupo</label>
-    <input type="number" name="grupo">
+    <input type="text" name="grupo">
 </p>
 <p>
     <label for="expediente">Expediente</label>
@@ -28,7 +28,7 @@
 </p>
 <p>
     <label for="telefono">Teléfono</label>
-    <input type="number" name="telefono">
+    <input type="text" name="telefono">
 </p>
 <p>
     <label for="email">E-mail</label>
