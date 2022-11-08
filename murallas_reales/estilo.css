@@ -1,0 +1,13 @@
+div.boton{
+    width: 200px;
+    height: 100px;
+    border: solid rgb(68, 147, 184) 2px;
+    border-radius: 30px;
+    background-color:lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.espacio{
+    height: 25px;
+}
