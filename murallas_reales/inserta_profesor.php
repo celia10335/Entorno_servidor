@@ -14,8 +14,8 @@ if ($conexion->connect_error) {
 }
 
 
-$sql = "INSERT INTO Alumno (id_grupo, nombre, apellidos, expediente, telefono, email)
-VALUES ('$_POST[idgrupo]', '$_POST[nombre]', '$_POST[apellidos]', '$_POST[expediente]', '$_POST[telefono]', '$_POST[email]')";
+$sql = "INSERT INTO Profesor (nombre, apellidos, telefono, email)
+VALUES ('$_POST[nombre]', '$_POST[apellidos]', '$_POST[telefono]', '$_POST[email]')";
 
 if ($conexion->query($sql) === true){
     echo "Nuevo registro insertado";

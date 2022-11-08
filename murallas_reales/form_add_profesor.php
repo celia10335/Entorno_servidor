@@ -19,14 +19,6 @@
     <input type="text" name="apellidos">
 </p>
 <p>
-    <label for="grupo">Grupo</label>
-    <input type="number" name="grupo">
-</p>
-<p>
-    <label for="expediente">Expediente</label>
-    <input type="number" name="expediente">
-</p>
-<p>
     <label for="telefono">Teléfono</label>
     <input type="text" name="telefono">
 </p>
