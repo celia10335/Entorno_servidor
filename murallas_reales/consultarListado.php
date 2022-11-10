@@ -25,11 +25,11 @@ $resultado = $conexion->query($sql);
     <p>Selecciona listado a consultar</p>
     <form action="inserta_alumno.php" method="POST">
 
-    <div class="boton">GRUPOS</div>
+    <div class="boton"><a href="consulta_grupos.php">GRUPOS</div>
     <div class="espacio"></div>
-    <div class="boton">ALUMNOS</div>
+    <div class="boton"><a href="consulta_totalAlumnos.php">ALUMNOS</div>
     <div class="espacio"></div>
-    <div class="boton">PROFESORES</div>
+    <div class="boton"><a href="consulta_profesores.php">PROFESORES</div>
 
     </form>
 
