@@ -12,7 +12,7 @@ if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
         $id = $row["id_grupo"];
         echo "<li>".$row["nombre"].
-        "<div class='boton' style='border: solid black 2px; display: inline-flex; padding: 3px; margin: 8px;'><a href='consulta_alumnos.php'>Alumnos</a></div>
+        "<div class='boton' style='border: solid black 2px; display: inline-flex; padding: 3px; margin: 8px;'><a href='consulta_alumnos.php?idgrupo=".$id."'>Alumnos</a></div>
         </li>";
     }
 }   

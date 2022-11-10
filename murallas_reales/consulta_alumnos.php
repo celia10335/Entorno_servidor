@@ -1,9 +1,11 @@
 <?php
 include_once "./conectar.php";
 
-$idgrupo = 9;
+$idgrupo = $_GET['idgrupo'];
 
-$sql = "SELECT * FROM Alumno WHERE id_grupo =".$idgrupo;
+//SELECT Alumno.nombre, apellidos, Grupo.nombre as 'nom_grupo' FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo
+
+$sql = "SELECT * FROM Alumno WHERE id_grupo =$idgrupo";
 
 $resultado = $conexion->query($sql);
 
