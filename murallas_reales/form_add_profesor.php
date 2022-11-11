@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<p>Introduzca los datos del alumno</p>
+<p>Introduzca los datos del profesor</p>
 <form action="inserta_profesor.php" method="POST">
 <p>
     <label for="nombre">Nombre</label>

@@ -10,9 +10,10 @@ echo "<ul>";
 
 if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
-
+        $id_alumno=$row['id_alumno'];
         echo "<li>".$row["nombre"]." ".$row["apellidos"]." - grupo: ".$row["nom_grupo"].
-        "</li>";
+        "<div class='borrar' style='border: solid black 2px; display: inline-flex; padding: 3px; margin: 8px;'><a href='elimina_alumno.php?idalumno=".$id_alumno."'>Eliminar</a></div>
+        </li>";
     }
 }   
 

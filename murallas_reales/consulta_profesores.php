@@ -1,7 +1,7 @@
 <?php
 include_once "./conectar.php";
 
-$sql = "SELECT nombre, apellidos FROM Profesor";
+$sql = "SELECT id_profesor, nombre, apellidos FROM Profesor";
 
 $resultado = $conexion->query($sql);
 
@@ -11,7 +11,8 @@ echo "<ul>";
 if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
         echo "<li>".$row["nombre"]." ".$row["apellidos"].
-        "</li>";
+        "<div class='boton' style='border: solid black 2px; display: inline-flex; padding: 3px; margin: 8px;'><a href='elimina_profesor.php?idprofesor=".$row["id_profesor"]."'>Eliminar</a></div>
+        </li>";
     }
 }   
 
