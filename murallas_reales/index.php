@@ -22,16 +22,18 @@ $resultado = $conexion->query($sql);
 
 ?>
 
-    <p>Selecciona listado a consultar</p>
-    <form action="inserta_alumno.php" method="POST">
 
-    <div class="boton"><a href="consulta_grupos.php">GRUPOS</div>
+<h2>Selecciona listado a consultar</h2>
+   
+
+<section>
+<div class="boton"><a href="consulta_grupos.php">GRUPOS</div>
     <div class="espacio"></div>
     <div class="boton"><a href="consulta_totalAlumnos.php">ALUMNOS</div>
     <div class="espacio"></div>
     <div class="boton"><a href="consulta_profesores.php">PROFESORES</div>
+</section>
 
-    </form>
 
     <?php
 

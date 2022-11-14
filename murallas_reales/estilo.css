@@ -1,15 +1,162 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: rgb(156, 222, 222);
+    background: linear-gradient(to bottom, rgb(156, 222, 222) 60%, white 100%);
+    height: 100vh;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+p, h2{
+    text-align: center;
+}
+
+h2{
+    padding-top: 60px;
+}
+
+
+section{
+    width: 70%;
+    margin: 40px 15% 50px 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.add{
+    margin: 0 15% 20px 15%;
+}
+
+section.add a{
+    color: rgb(36, 36, 74);
+    font-size: 1.15em;
+}
+
+nav{
+    margin: 40px 30% 0 30%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav div{
+    min-width: 150px;
+    height: 40px;
+    border: solid rgb(68, 147, 184) 2px;
+    margin: 0 20px 0 20px;
+    border-radius: 10px;
+    background-color:lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 div.boton{
     width: 200px;
-    height: 100px;
+    height: 80px;
+    margin: 3px;
+    padding: 8px;
     border: solid rgb(68, 147, 184) 2px;
     border-radius: 30px;
     background-color:lightsalmon;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
 }
+
+div.boton a{
+    color: black;
+    font-weight: 700;
+    font-size: 1.25em;
+    text-align: center;
+}
+
 div.espacio{
     height: 25px;
+    width: 25px;
+}
+
+div.add{
+    width: 40%;
+    height: 40px;
+    margin: 10px 20% 10px 20%;
+    padding: 5px;
+    border: solid grey 1px;
+    border-radius: 8px;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.form{
+    width: 200px;
+    height: 40px;
+    margin: 10px 30px 0 30px;
+    padding: 5px;
+    border: solid grey 1px;
+    border-radius: 8px;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+ul li{
+    line-height: 40px;
+}
+
+
+table{
+    border-collapse: separate;
+    width: 60%;
+    align-items: center;
+}
+
+td, th {
+    border: 1px solid white;
+    text-align: left;
+    padding: 8px;
+  }
+  
+th{
+    background-color: rgba(2,0,36,1);
+    color: white;
+}
+
+  tr:nth-child(odd) {
+    background-color: rgb(248, 198, 118);
+  }
+
+td{
+    white-space: nowrap;
+    width: 50px;
+    text-align: center;
+}
+
+  td:first-child{
+    width: 180px;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+
+td a{
+    color: rgb(78, 78, 80);
+}
+
+table.igual_igual td{
+    white-space: nowrap;
+    width: 50px;
+    text-align: left;
+    padding-left: 40px;
 }

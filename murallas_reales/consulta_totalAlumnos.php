@@ -1,24 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar listado</title>
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+
+
 <?php
 include_once "./conectar.php";
 
-$sql = "SELECT Alumno.id_alumno as 'id_alumno', Alumno.nombre, apellidos, Grupo.nombre as 'nom_grupo' FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo";
+$sql = "SELECT Alumno.id_alumno as 'id_alumno', Alumno.nombre, apellidos, Grupo.nombre as 'nom_grupo', expediente, telefono, email FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo";
 
 $resultado = $conexion->query($sql);
 
+
+
 echo "<h2>Listado de alumnos</h2>";
-echo "<ul>";
+
+echo "<section>";
+
+echo "<table>";
+echo "<tr><th>ALUMNO</th><th>Expediente</th><th>Grupo</th><th>Teléfono</th><th>E-mail</th></tr>";
 
 if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
-
-        echo "<li>".$row["nombre"]." ".$row["apellidos"]." - grupo: ".$row["nom_grupo"].
-        "<div class='borrar' style='border: solid black 2px; display: inline-flex; padding: 3px; margin: 8px;'><a href='elimina_alumno.php?idalumno=".$row['id_alumno']."'>Eliminar</a></div>
-        </li>";
+        echo "<tr>";
+        echo "<td>".$row["nombre"]." ".$row["apellidos"]."</td>
+        <td>".$row["expediente"]."</td>
+        <td>".$row["nom_grupo"]."</td>
+        <td>".$row["telefono"]."</td>
+        <td>".$row["email"]."</td>
+        <td><a href='actualiza_alumno.php?idalumno=".$row['id_alumno']."'>Modificar</a></td>
+        <td><a href='elimina_alumno.php?idalumno=".$row['id_alumno']."'>Eliminar</a></td>";
+        echo "</tr>";
     }
 }   
 
+echo "</table>";
 
-echo "</ul>";
+echo "</section>";
+
+?>
+<section class="add">
+  <div class="add"><a href="./form_add_alumno.php">Añadir alumno</a>  
+</section>
+
+
+<hr>
+
+<nav>
+    <div><a href="./index.php">ir a INICIO</a></div>
+    <div><a href="./consulta_grupos.php">ir a GRUPOS</a></div>
+    <div><a href="./consulta_profesores.php">ir a PROFESORES</a></div>
+</nav>
+
+
+
+<?php
 
 
 $conexion->close();
