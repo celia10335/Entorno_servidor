@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar listado</title>
-    <link rel="stylesheet" href="./estilo.css">
-</head>
-
-
 <?php
 include_once "./conectar.php";
 
-$sql = "SELECT Alumno.id_alumno as 'id_alumno', Alumno.nombre, apellidos, Grupo.nombre as 'nom_grupo', expediente, telefono, email FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo";
+$sql = "SELECT Alumno.id_alumno as 'id_alumno', Alumno.nombre, apellidos, Grupo.nombre as 'nom_grupo', expediente, telefono, email FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo order by nom_grupo, apellidos";
 
 $resultado = $conexion->query($sql);
 
@@ -34,7 +22,7 @@ if ($resultado->num_rows > 0) {
         <td>".$row["nom_grupo"]."</td>
         <td>".$row["telefono"]."</td>
         <td>".$row["email"]."</td>
-        <td><a href='actualiza_alumno.php?idalumno=".$row['id_alumno']."'>Modificar</a></td>
+        <td><a href='actualiza_alumno.php?idalumno=".$row['id_alumno']."&nombre=".$row["nombre"]."&apellidos=".$row["apellidos"]."&expediente=".$row["expediente"]."&telefono=".$row["telefono"]."&email=".$row["email"]."'>Modificar</a></td>
         <td><a href='elimina_alumno.php?idalumno=".$row['id_alumno']."'>Eliminar</a></td>";
         echo "</tr>";
     }
