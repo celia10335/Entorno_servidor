@@ -1,7 +1,7 @@
 <?php
 include_once "./conectar.php";
 
-$sql = "SELECT Alumno.id_alumno as 'id_alumno', Alumno.nombre, apellidos, Grupo.nombre as 'nom_grupo', expediente, telefono, email FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo order by nom_grupo, apellidos";
+$sql = "SELECT Alumno.id_alumno as 'id_alumno', Alumno.nombre, apellidos, expediente, telefono, email, Grupo.nombre as 'nom_grupo', Grupo.id_grupo as 'id_grupo' FROM Alumno JOIN Grupo WHERE Alumno.id_grupo = Grupo.id_grupo order by nom_grupo, apellidos";
 
 $resultado = $conexion->query($sql);
 
@@ -22,7 +22,7 @@ if ($resultado->num_rows > 0) {
         <td>".$row["nom_grupo"]."</td>
         <td>".$row["telefono"]."</td>
         <td>".$row["email"]."</td>
-        <td><a href='actualiza_alumno.php?idalumno=".$row['id_alumno']."&nombre=".$row["nombre"]."&apellidos=".$row["apellidos"]."&expediente=".$row["expediente"]."&telefono=".$row["telefono"]."&email=".$row["email"]."'>Modificar</a></td>
+        <td><a href='actualiza_alumno.php?idalumno=".$row['id_alumno']."&nombre=".$row["nombre"]."&apellidos=".$row["apellidos"]."&expediente=".$row["expediente"]."&telefono=".$row["telefono"]."&email=".$row["email"]."&nom_grupo=".$row["nom_grupo"]."'>Modificar</a></td>
         <td><a href='elimina_alumno.php?idalumno=".$row['id_alumno']."'>Eliminar</a></td>";
         echo "</tr>";
     }
