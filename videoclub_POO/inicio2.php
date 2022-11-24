@@ -1,7 +1,6 @@
 <?php
 
 
-include './Soporte.php';
 include './CintaVideo.php';
 
 $miCinta = new CintaVideo("Los cazafantasmas", 22, 3.5, 107);
