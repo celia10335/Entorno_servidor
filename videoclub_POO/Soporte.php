@@ -28,7 +28,7 @@ class Soporte{
     }
 
     public function getPrecioConIva() : float {
-        return $this->precio*($this->getIva() + 1);
+        return round($this->precio*($this->getIva() + 1), 2);
     }
 
     public function getNumero() : string {
