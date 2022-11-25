@@ -1,4 +1,5 @@
 <?php
+include_once "./Soporte.php";
 
 class Cliente{
     // Atributos:
@@ -35,6 +36,19 @@ class Cliente{
     // Otros métodos:
     public function muestraResumen(){
         echo "Cliente: ".$this->nombre.",soportes en alquiler: ".count($this->soportesAlquilados);
+    }
+
+    public function tieneAlquilado(Soporte $s) : bool{
+        if (in_array($s, $this->soportesAlquilados)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function alquilar(Soporte $s) : bool{
+
     }
 }
 
