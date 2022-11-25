@@ -42,6 +42,22 @@ class Juego extends Soporte{
         echo "<br>Consola: ".$this->getConsola()."<br>Número mínimo de jugadores: ".$this->getMinJugadores()."<br>Número máximo de jugadores: ".$this->getMaxJugadores();
     }
 
+
+    public function muestraJugadoresPosibles(){
+        if ($this->getMaxJugadores() == $this->getMinJugadores()){
+            if ($this->getMaxJugadores() == 1){
+                echo "Para un jugador";
+            }
+
+            else {
+                echo "Para ".$this->getMinJugadores()." jugadores";
+            }
+        }
+        else {
+            echo "De ".$this->getMinJugadores()." a ".$this->getMaxJugadores()." jugadores";
+        }
+    }
+
 }
 
 ?>
