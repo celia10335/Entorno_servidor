@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2022 a las 00:42:42
+-- Tiempo de generación: 16-11-2022 a las 20:09:15
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -42,11 +42,22 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`id_alumno`, `id_grupo`, `nombre`, `apellidos`, `expediente`, `telefono`, `email`) VALUES
-(1, 1, 'Alba', 'García', 266, NULL, NULL),
+(1, 1, 'Alba', 'García', 266, '', ''),
 (2, 9, 'Paula', 'López Paz', 212, '611222333', 'paulalopez@murallas.es'),
-(5, 10, 'Hanan', 'Ahmed Mohamed', 411, NULL, NULL),
-(8, 10, 'Paloma', 'Cruz Solís', 54, '', ''),
-(9, 11, 'Rocío', 'Villalba Lebrón', 109, '', 'rociov@murallas.es');
+(3, 10, 'Adrián', 'Jones Gil', 411, '', 'adrianjones@murallas.es'),
+(5, 5, 'Gael', 'Sánchez Bray', 411, '600123123', 'gaelsb@murallas.es'),
+(6, 14, 'Hanan', 'Ahmed Mohamed', 411, '', 'hananmo@murallas.es'),
+(8, 14, 'Leticia', 'Aroca Díaz', 298, '', 'leticiaa@murallas.es'),
+(9, 7, 'Mohammed', 'Ahmed', 266, '', ''),
+(10, 3, 'Nicolau', 'Romescu', 319, '', ''),
+(11, 13, 'Hans', 'Müller', 477, '', ''),
+(12, 5, 'Patricia', 'de Frutos Monje', 398, '600111888', ''),
+(13, 7, 'Álvaro', 'Llopis Sánchez', 287, '600222888', ''),
+(14, 1, 'Jesús', 'Rey España', 290, '600333111', 'reyespana@murallas.es'),
+(15, 3, 'Dunia', 'Chemlal Ahmed', 200, '699000111', 'duniac@murallas.es'),
+(16, 9, 'Carla', 'Bruni', 199, '633111000', 'carlab@murallas.es'),
+(17, 10, 'Eutiquio', 'de Cos Fernández', 655, '', 'eutiquio@murallas.es'),
+(18, 14, 'Laila', 'Yousafzai', 500, '', 'lailayou@murallas.es');
 
 -- --------------------------------------------------------
 
@@ -71,8 +82,8 @@ INSERT INTO `grupo` (`id_grupo`, `nombre`, `curso`) VALUES
 (7, '1ºESO B', '2022/2023'),
 (9, '3ºESO A', '2022/2023'),
 (10, '4ºESO A', '2022/2023'),
-(11, '3ºESO B', '2022/2023'),
-(17, '4ºESO B', '2022/2023');
+(13, '3ºESO B', '2022/2023'),
+(14, '4ºESO B', '2022/2023');
 
 -- --------------------------------------------------------
 
@@ -93,9 +104,12 @@ CREATE TABLE `profesor` (
 --
 
 INSERT INTO `profesor` (`id_profesor`, `nombre`, `apellidos`, `telefono`, `email`) VALUES
-(3, 'Luis', 'Fernández Borrego', '633000333', 'luisfernandez@murallas.es'),
+(3, 'Luis', 'Fernández Gil', '633000000', 'luisfernandez@murallas.es'),
 (4, 'Ricardo', 'Aroca Ros', '677777770', 'ricardoaroca@murallas.es'),
-(5, 'Margarita', 'Ruiz Alava', '600222345', 'margaruiz@murallas.es');
+(5, 'Margarita', 'Ruiz Alava', '622123456', 'margaruiz@murallas.es'),
+(8, 'Melissa', 'Buckley', '700123456', 'melissabuckley@murallas.es'),
+(9, 'Patrick', 'Johnson', '733999888', 'patrickj@murallas.es'),
+(10, 'Enriqueta', 'Salas Porras', '', '');
 
 -- --------------------------------------------------------
 
@@ -114,7 +128,15 @@ CREATE TABLE `tutoria` (
 
 INSERT INTO `tutoria` (`id_grupo`, `id_profesor`) VALUES
 (3, 3),
-(9, 4);
+(5, 3),
+(5, 8),
+(7, 3),
+(9, 4),
+(10, 4),
+(10, 5),
+(13, 8),
+(14, 8),
+(14, 9);
 
 --
 -- Índices para tablas volcadas
@@ -154,19 +176,19 @@ ALTER TABLE `tutoria`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  MODIFY `id_profesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_profesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
