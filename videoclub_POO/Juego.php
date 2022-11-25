@@ -1,6 +1,6 @@
 <?php
 
-include "./Soporte.php";
+include_once "./Soporte.php";
 
 class Juego extends Soporte{
 
@@ -12,7 +12,7 @@ class Juego extends Soporte{
 
 
     // Constructores:
-    public function __construct(string $titulo, string $numero, float $precio, string $consola, int $minNumJugadores, int $maxNumJugadores){
+    public function __construct(string $titulo, int $numero, float $precio, string $consola, int $minNumJugadores, int $maxNumJugadores){
         parent::__construct($titulo, $numero, $precio);
         $this->consola = $consola;
         $this->minNumJugadores = $minNumJugadores;
@@ -37,7 +37,7 @@ class Juego extends Soporte{
 
     // Otros métodos
     public function muestraResumen(){
-        echo "Videojuego:<br>";
+        echo "<strong><br>Videojuego:</strong><br>";
         parent::muestraResumen();
         echo "<br>Consola: ".$this->getConsola()."<br>Número mínimo de jugadores: ".$this->getMinJugadores()."<br>Número máximo de jugadores: ".$this->getMaxJugadores();
     }

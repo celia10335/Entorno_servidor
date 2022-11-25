@@ -1,6 +1,6 @@
 <?php
 
-include "./Soporte.php";
+include_once "./Soporte.php";
 
 class Dvd extends Soporte{
 
@@ -10,7 +10,7 @@ class Dvd extends Soporte{
 
 
     // Constructores
-    public function __construct(string $titulo, string $numero, float $precio, string $idiomas, string $formatPantalla){
+    public function __construct(string $titulo, int $numero, float $precio, string $idiomas, string $formatPantalla){
         parent::__construct($titulo, $numero, $precio);
         $this->idiomas = $idiomas;
         $this->formatPantalla = $formatPantalla;
@@ -29,7 +29,7 @@ class Dvd extends Soporte{
 
     // Otros métodos
     public function muestraResumen(){
-        echo "Película en DVD:<br>";
+        echo "<strong><br>Película en DVD:</strong><br>";
         parent::muestraResumen();
         echo "<br>Idiomas: ".$this->getIdiomas()."<br>Formato de pantalla: ".$this->getFormatPantalla();
     }

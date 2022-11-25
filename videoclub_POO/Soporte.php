@@ -3,7 +3,7 @@ class Soporte{
  
     // Atributos:
     public string $titulo;
-    protected string $numero;
+    protected int $numero;
     private float $precio;
     private static float $iva = 0.21;
     public static function getIva() : float{
@@ -14,7 +14,7 @@ class Soporte{
 
 
     // Constructores:
-    public function __construct(string $titulo, string $numero, float $precio){
+    public function __construct(string $titulo, int $numero, float $precio){
         $this->titulo = $titulo;
         $this->numero = $numero;
         $this->precio = $precio;
@@ -31,7 +31,7 @@ class Soporte{
         return round($this->precio*($this->getIva() + 1), 2);
     }
 
-    public function getNumero() : string {
+    public function getNumero() : int {
         return $this->numero;
     } 
 
