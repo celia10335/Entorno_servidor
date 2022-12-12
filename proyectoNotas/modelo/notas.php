@@ -24,6 +24,9 @@ class NoteTable{
     private string $tabla = "note";
     private $conection;
     private $notas = array();
+    public function __construct(){
+        
+    }
 
 
     public function setConection(){
