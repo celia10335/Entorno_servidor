@@ -18,7 +18,9 @@ $datos = $control->{$_GET["action"]}();
 
 
 // cargar la vista
+require_once "./vistas/plantillas/cabecera.html";
 require_once "./vistas/".$control->vista.".php";
+require_once "./vistas/plantillas/cierre.html";
 ?>
 
 
