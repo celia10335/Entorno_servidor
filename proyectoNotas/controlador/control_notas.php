@@ -2,7 +2,7 @@
 
 class Controlador{
     public $vista = "list";
-    public $objetoTabla;
+    public $objetoTabla = new NoteTable();
 
 
     public function __construct(){
@@ -12,7 +12,7 @@ class Controlador{
 
     public function list(){
         $this->vista = "list";
-        $this->objetoTabla;
+        $this->objetoTabla->getNotes();
     }
 
     public function edit(){
