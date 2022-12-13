@@ -1,5 +1,7 @@
 <?php
 
+require_once 'modelo/notas.php';
+
 class Controlador{
     public $vista;
     public $titulo_pag;
@@ -7,9 +9,9 @@ class Controlador{
 
 
     public function __construct(){
-        public $vista = "list";
-        public $titulo_pag = "";
-        public $objetoNotas = new NoteTable();
+        $this->vista = "list";
+        $this->titulo_pag = "";
+        $this->objetoNotas = new NoteTable();
     }
 
 
@@ -25,6 +27,7 @@ class Controlador{
 
     public function edit(){
         $this->vista = "edit";
+        $this->titulo_pag = "Editar nota";
     }
 }
 

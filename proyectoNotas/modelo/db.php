@@ -1,6 +1,6 @@
 <?php
 
-include_once "./constantes/config.php";
+include_once "constantes/config.php";
 
 class Db
 {
@@ -11,7 +11,7 @@ class Db
     public $conection;
 
 
-public function _construct(){
+public function __construct(){
 
     $this->host = constant('DB_HOST');
     $this->dbname = constant('DB_NAME');
@@ -25,4 +25,5 @@ public function _construct(){
 }
 
 }
+
 ?>
