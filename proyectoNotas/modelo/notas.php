@@ -53,6 +53,18 @@ class NoteTable{
         //return "debug notas";
     }
 
+    public function newNotes(){
+        $this->setConection();
+        $sql = "INSERT INTO".$this->tabla."(title, content) VALUES ('$_POST[title]','$_POST[content]')";
+
+        if($this->conection->query($sql) === true){
+            echo "Nueva nota creada";
+        }
+        else {
+            echo "Error".$sql."<br>".$this->conection->connect_error;
+        }
+    }
+
     
 }
 

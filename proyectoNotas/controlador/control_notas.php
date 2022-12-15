@@ -23,6 +23,7 @@ class Controlador{
     public function insert(){
         $this->vista = "insert";
         $this->titulo_pag = "Crear nota";
+        return $this->objetoNotas->newNotes();
     }
 
     public function edit(){
