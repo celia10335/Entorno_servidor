@@ -1,5 +1,5 @@
 <p>Crear nueva nota</p>
-<form action="../modelo/notas.php" method="post">
+<form action="index.php?action=insert" method="post">
     <p>
         <label for="title">Título</label>
         <input type="text" name="title">

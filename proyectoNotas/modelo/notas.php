@@ -17,6 +17,10 @@ class Nota
         $this->contenido = $contenido;
     }
 
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
 }
 
 
@@ -25,23 +29,23 @@ class NoteTable
 {
 
     private $tabla = "note";
-    private $conection;
-    private array $notas = array();
+    public $conection;
+    public array $notas = array();
     public function __construct()
     {
-
     }
 
 
-    public function setConection()
+    public function getConection()
     {
         $db = new Db();
         $this->conection = $db->conection;
     }
 
+
     public function getNotes()
     {
-        $this->setConection();
+        $this->getConection();
         $sql = "SELECT * FROM " . $this->tabla;
         $result = $this->conection->query($sql);
 
@@ -54,14 +58,14 @@ class NoteTable
         }
 
         return $this->notas;
-        //return "debug notas";
     }
 
-    public function newNotes()
+
+    public function newNotes($title, $content)
     {
-        $this->setConection();
-        
-        $sql = "INSERT INTO" . $this->tabla . "(title, content) VALUES ('$_POST[title]','$_POST[content]')";
+        $this->getConection();
+
+        $sql = "INSERT INTO " . $this->tabla . " (title, content) VALUES ('" . $title . "','" . $content . "')";
         $result = $this->conection->query($sql);
 
         if ($result->num_rows > 0) {
@@ -80,9 +84,35 @@ class NoteTable
     }
 
 
+    public function getById($id)
+    {
+        $this->getConection();
+
+        $sql = "SELECT * from " . $this->tabla . " WHERE id = " . $id;
+        $result = $this->conection->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $this->notas[0] = new Nota($id, $row["title"], $row["content"]);
+            }
+        }
+
+        return $this->notas;
+    }
+
+
+    public function deleteNote($id)
+    {
+        $this->getConection();
+
+        $sql = "DELETE FROM " . $this->tabla . " WHERE id =" . $id;
+
+        if ($this->conection->query($sql)) {
+            $mensaje = "Nota eliminada con éxito";
+        } else {
+            $mensaje = "Error " . $this->getConection->error;
+        }
+
+        return $mensaje;
+    }
 }
-
-
-
-
-?>
