@@ -14,6 +14,8 @@ echo "</div>";
     }
 }
 
+echo "<div class='add'><a href='index.php?action=insert'>Nueva nota</a></div>";
+
 echo "</main>";
 
 ?>

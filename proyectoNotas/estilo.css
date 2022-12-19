@@ -67,3 +67,19 @@ div.nota > p {
     font-family: 'Indie Flower', cursive;
     font-size: 1.1em;
 }
+
+div.add{
+    padding: 3vh 1vw;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 6px;
+    height: 10vh;
+    float: left;
+    border: solid grey 3px;
+    background-color: rgb(128, 128, 128, 0.5);
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
