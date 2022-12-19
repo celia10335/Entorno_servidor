@@ -24,12 +24,19 @@ $vc->incluirSocio("Pablo Picasso", 2);
 
 
 echo "<hr>";
-// los socios alquilan productos
+// El socio 2 alquila productos
 $vc->alquilarSocioProducto(2,2);
 $vc->alquilarSocioProducto(2,3);
 $vc->alquilarSocioProducto(2,2);
 $vc->alquilarSocioProducto(2,6);
 
+echo "<hr>";
+// El socio 1 alquila productos
+$vc->alquilarSocioProducto(1,2);
+$vc->alquilarSocioProducto(1,3);
+$vc->alquilarSocioProducto(1,2);
+$vc->alquilarSocioProducto(1,6);
+$vc->alquilarSocioProducto(1,1);
 // listar socios
 echo "<hr>";
 $vc->listarSocios();
