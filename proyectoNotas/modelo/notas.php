@@ -70,17 +70,16 @@ class NoteTable
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $this->notas[0] = new Nota($row["id"], $row["title"], $row["content"]);
+                return $this->notas[0] = new Nota($row["id"], $row["title"], $row["content"]);
             }
         }
 
-        if ($this->conection->query($sql) === true) {
-            echo "Nueva nota creada";
-        } else {
-            echo "Error" . $sql . "<br>" . $this->conection->connect_error;
-        }
+        // if ($this->conection->query($sql) === true) {
+        //     echo "Nueva nota creada";
+        // } else {
+        //     echo "Error" . $sql . "<br>" . $this->conection->connect_error;
+        // }
 
-        return $this->notas;
     }
 
 
@@ -99,6 +98,11 @@ class NoteTable
 
         return $this->notas;
     }
+
+
+    // function actualizar(){
+
+    // }
 
 
     public function deleteNote($id)
