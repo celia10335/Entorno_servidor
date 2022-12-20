@@ -80,6 +80,15 @@ div.add {
   background-color: rgb(128, 128, 128, 0.5);
 }
 
+.navegacion{
+  padding: 3vh 1vw;
+  margin-top: 20px;
+  border-radius: 6px;
+  height: 10vh;
+  border: solid grey 3px;
+  background-color: rgb(128, 128, 128, 0.5);
+}
+
 a {
   text-decoration: none;
   font-family: 'Playfair Display', serif;

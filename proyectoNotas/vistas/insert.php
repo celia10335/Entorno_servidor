@@ -12,3 +12,5 @@
         <input type="submit" value="Añadir">
     </p>
 </form>
+
+<div class="navegacion"><a href="index.php?action=list">Ver listado de notas</div>

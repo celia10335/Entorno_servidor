@@ -37,6 +37,10 @@ class Controlador
         return $this->objetoNotas->getById($_GET['id']);
     }
 
+    // function actualizar(){
+
+    // }
+
     public function delete()
     {
         $this->vista = "borrar";
