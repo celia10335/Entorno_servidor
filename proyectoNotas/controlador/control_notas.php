@@ -37,9 +37,11 @@ class Controlador
         return $this->objetoNotas->getById($_GET['id']);
     }
 
-    // function actualizar(){
-
-    // }
+    public function actualizar(){
+        $this->vista = "actualizar";
+        $this->titulo_pag = "actualizar nota";
+        return $this->objetoNotas->actualizar($_GET['id'], $_POST['title'], $_POST['content']);
+    }
 
     public function delete()
     {

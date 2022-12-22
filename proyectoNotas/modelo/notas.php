@@ -100,9 +100,12 @@ class NoteTable
     }
 
 
-    // function actualizar(){
-
-    // }
+    public function actualizar($id, $nuevo_titulo, $nuevo_contenido){
+        $this->getConection();
+        $sql = "UPDATE" . $this->tabla . "SET title=".$nuevo_titulo.", content=".$nuevo_contenido." WHERE id = " . $id;
+        $result = $this->conection->query($sql);
+        return $result;
+    }
 
 
     public function deleteNote($id)
