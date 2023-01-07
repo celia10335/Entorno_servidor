@@ -2,6 +2,7 @@
 <main>
 
     <div class=nuevaNota>
+
         <form action="index.php?action=insert" method="post">
             <p>
                 <label for="title">Título</label>
@@ -15,7 +16,8 @@
                 <input type="submit" value="Añadir" id="submit">
             </div>
         </form>
+
     </div>
-    <div class="navegacion"><a href="index.php?action=list">Ver listado de notas</div>
+    <div class="navegacion"><a href="index.php?action=list">Volver al listado</div>
 
 </main>

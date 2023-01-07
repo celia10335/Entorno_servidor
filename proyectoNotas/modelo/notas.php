@@ -1,6 +1,8 @@
 <?php
 
 include_once "db.php";
+
+// Definición de la clase "Nota", que tendrá sólo los atributos básicos, un constructor y, si los atributos son privados, métodos para acceder a ellos
 class Nota
 {
     public $id;
@@ -24,7 +26,7 @@ class Nota
 }
 
 
-
+// Definición de la clase "NoteTable", que llamará a la base de datos para crear, modificar, eliminar o leer notas. Tendrá métodos para cada una de estas funciones y algunos auxiliares
 class NoteTable
 {
 
@@ -36,6 +38,7 @@ class NoteTable
     }
 
 
+    // Establecer conexión con la base de datos
     public function getConection()
     {
         $db = new Db();
@@ -43,6 +46,7 @@ class NoteTable
     }
 
 
+    // Obtener todas las notas existentes para mostrarlas en el listado
     public function getNotes()
     {
         $this->getConection();
@@ -56,11 +60,10 @@ class NoteTable
                 $i++;
             }
         }
-
-        return $this->notas;
     }
 
 
+    // Insertar nueva nota. Con los datos recogidos en el formulario, se instancia un nuevo objeto "nota"
     public function newNotes($title, $content)
     {
         $this->getConection();
@@ -70,12 +73,13 @@ class NoteTable
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                return $this->notas[0] = new Nota($row["id"], $row["title"], $row["content"]);
+                $this->notas[0] = new Nota($row["id"], $row["title"], $row["content"]);
             }
         }
     }
 
 
+    // Obtener los datos de un objeto "nota" a partir de su id. Los datos se muestran en los campos del formulario para ser modificados
     public function getById($id)
     {
         $this->getConection();
@@ -93,15 +97,23 @@ class NoteTable
     }
 
 
+    // Actualizar la base de datos a partir de los datos introducidos en el formulario
     public function actualizar($id, $nuevo_titulo, $nuevo_contenido)
     {
         $this->getConection();
-        $sql = "UPDATE" . $this->tabla . "SET title=" . $nuevo_titulo . ", content=" . $nuevo_contenido . " WHERE id = " . $id;
-        $result = $this->conection->query($sql);
-        return $result;
+        $sql = "UPDATE " . $this->tabla . " SET title='" . $nuevo_titulo . "', content='" . $nuevo_contenido . "' WHERE id = '" . $id . "'";
+
+        if ($this->conection->query($sql) === true) {
+            return "Actualizado";
+        } else {
+            return "Ha habido un error";
+        }
+
+        $this->conection->close();
     }
 
 
+    // Eliminar nota
     public function deleteNote($id)
     {
         $this->getConection();
