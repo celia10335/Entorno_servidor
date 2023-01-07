@@ -9,8 +9,8 @@ if (count($datos) > 0) {
     foreach ($datos as $n) {
         echo "<div class='contenedor'>";
         echo "<div class='nota'><h4>" . $n->titulo . "</h4><hr><p>" . $n->contenido . "</p></div>";
-        echo "<div><a href='index.php?action=delete&id=" . $n->id . "'>Borrar</div>";
-        echo "<div><a href='index.php?action=edit&id=" . $n->id . "'>Editar</div>";
+        echo "<div><a href='index.php?action=confirm&id=" . $n->id . "'>Borrar</a></div>";
+        echo "<div><a href='index.php?action=edit&id=" . $n->id . "'>Editar</a></div>";
         echo "</div>";
     }
 }

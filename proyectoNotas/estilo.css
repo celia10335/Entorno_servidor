@@ -1,3 +1,12 @@
+:root {
+  --fondoPagina: rgb(125, 177, 179);
+  --fondoBoton: rgb(128, 128, 128, 0.3);
+  --amarilloSuave: rgb(255, 220, 154);
+  --colorAccent: rgb(179, 138, 134);
+  --rojoSuave: rgb(165, 42, 42, 0.4);
+  --verdeSuave: rgba(42, 165, 46, 0.4);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,17 +14,17 @@
 }
 
 body {
-  background-color: cadetblue;
+  background-color: var(--fondoPagina);
 }
 
 h1 {
   font-family: 'Kanit', sans-serif;
   text-align: center;
   border-bottom: solid black 4px;
-  background-color: rgb(255, 220, 154);
-  height: 10vh;
+  background-color: var(--amarilloSuave);
+  height: 90px;
   margin: auto;
-  padding-top: 2vh;
+  padding-top: 18px;
 }
 
 main {
@@ -29,11 +38,11 @@ div.contenedor {
 
 div.contenedor div:nth-child(2),
 div.contenedor div:nth-child(3) {
-  background-color: rgb(119, 24, 0);
-  border: solid white 1px;
+  background-color: var(--rojoSuave);
+  border: solid black 1px;
   border-radius: 5px;
-  width: 5vw;
-  height: 4vh;
+  width: 110px;
+  height: 35px;
   float: right;
   padding-top: 0.4vh;
   margin-top: 1vh;
@@ -41,11 +50,10 @@ div.contenedor div:nth-child(3) {
   font-weight: 400;
   font-size: 1em;
   text-align: center;
-  color: white;
 }
 
 div.contenedor div:nth-child(3) {
-  background-color: rgb(31, 68, 27);
+  background-color: var(--verdeSuave);
   margin-right: 20px;
 }
 
@@ -77,23 +85,100 @@ div.add {
   height: 10vh;
   float: left;
   border: solid grey 3px;
-  background-color: rgb(128, 128, 128, 0.5);
+  background-color: var(--fondoBoton);
 }
 
-.navegacion{
-  padding: 3vh 1vw;
-  margin-top: 20px;
+.navegacion {
+  padding: 2vh 1vw;
   border-radius: 6px;
-  height: 10vh;
-  border: solid grey 3px;
-  background-color: rgb(128, 128, 128, 0.5);
+  height: 8vh;
+  width: 40vw;
+  margin: auto;
+  margin-top: 20px;
+  border: solid grey 1px;
+  background-color: var(--fondoBoton);
+  text-align: center;
+  font-size: 1.15em;
 }
 
 a {
   text-decoration: none;
-  font-family: 'Playfair Display', serif;
+  color: black;
+  font-family: 'Kanit', sans-serif;
 }
 
-textarea {
-  resize: both;
+div.nuevaNota {
+  width: 40vw;
+  margin: auto;
+  margin-top: 30px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.nuevaNota p {
+  margin-bottom: 10px;
+}
+
+.nuevaNota input {
+  width: 100%;
+  height: 30px;
+}
+
+.nuevaNota label {
+  display: block;
+}
+
+.nuevaNota textarea {
+  height: 100px;
+  width: 100%;
+  margin: auto;
+}
+
+.nuevaNota input#submit {
+  background-color: var(--colorAccent);
+  height: 60px;
+  width: 100%;
+  border: solid black 3px;
+  border-radius: 6px;
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+  font-size: 1em;
+  margin: 10px 0 30px 0;
+}
+
+/* Vistas "confirmar" y "eliminar" --------------------------- */
+.eliminar {
+  text-align: center;
+  font-size: 1.25em;
+  font-family: 'Kanit', sans-serif;
+}
+
+h3.eliminar {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.eliminar div {
+  display: inline-block;
+  height: 48px;
+  width: 10vw;
+  margin: 30px 20px 0 20px;
+  padding-top: 7px;
+  border: solid black 1px;
+  border-radius: 6px;
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+}
+
+.eliminar div:nth-child(1) {
+  background-color: var(--rojoSuave);
+}
+
+.eliminar div:nth-child(2) {
+  background-color: var(--verdeSuave);
+}
+
+.eliminar a {
+  color: black;
 }

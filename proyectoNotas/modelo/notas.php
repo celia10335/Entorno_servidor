@@ -73,13 +73,6 @@ class NoteTable
                 return $this->notas[0] = new Nota($row["id"], $row["title"], $row["content"]);
             }
         }
-
-        // if ($this->conection->query($sql) === true) {
-        //     echo "Nueva nota creada";
-        // } else {
-        //     echo "Error" . $sql . "<br>" . $this->conection->connect_error;
-        // }
-
     }
 
 
@@ -100,9 +93,10 @@ class NoteTable
     }
 
 
-    public function actualizar($id, $nuevo_titulo, $nuevo_contenido){
+    public function actualizar($id, $nuevo_titulo, $nuevo_contenido)
+    {
         $this->getConection();
-        $sql = "UPDATE" . $this->tabla . "SET title=".$nuevo_titulo.", content=".$nuevo_contenido." WHERE id = " . $id;
+        $sql = "UPDATE" . $this->tabla . "SET title=" . $nuevo_titulo . ", content=" . $nuevo_contenido . " WHERE id = " . $id;
         $result = $this->conection->query($sql);
         return $result;
     }
@@ -117,7 +111,7 @@ class NoteTable
         if ($this->conection->query($sql)) {
             $mensaje = "Nota eliminada con éxito";
         } else {
-            $mensaje = "Error " . $this->getConection->error;
+            $mensaje = "Error " . $this->conection->error;
         }
 
         return $mensaje;

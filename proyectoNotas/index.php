@@ -21,8 +21,3 @@ $datos = $control->{$_GET["action"]}();
 require_once "vistas/plantillas/cabecera.html";
 require_once "vistas/".$control->vista.".php";
 require_once "vistas/plantillas/cierre.html";
-
-?>
-
-
-

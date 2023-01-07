@@ -27,7 +27,9 @@ class Controlador
     {
         $this->vista = "insert";
         $this->titulo_pag = "Crear nota";
-        return $this->objetoNotas->newNotes($_POST['title'], $_POST['content']);
+        if (isset($_POST['title']) && isset($_POST['content'])) {
+            return $this->objetoNotas->newNotes($_POST['title'], $_POST['content']);
+        }
     }
 
     public function edit()
@@ -37,10 +39,17 @@ class Controlador
         return $this->objetoNotas->getById($_GET['id']);
     }
 
-    public function actualizar(){
+    public function actualizar()
+    {
         $this->vista = "actualizar";
         $this->titulo_pag = "actualizar nota";
         return $this->objetoNotas->actualizar($_GET['id'], $_POST['title'], $_POST['content']);
+    }
+
+    public function confirm()
+    {
+        $this->vista = "confirmar";
+        $this->titulo_pag = "Eliminar nota";
     }
 
     public function delete()

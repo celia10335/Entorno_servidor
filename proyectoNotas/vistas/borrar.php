@@ -1,4 +1,11 @@
-<?php
+<h1>Eliminar nota</h1>
+<main>
 
-echo "<p>" . $datos . "</p>";
-echo "<div><a href='index.php?action=list'>Volver a inicio</div>";
+    <?php
+
+    echo "<h3 class='eliminar'>" . $datos . "</h3>";
+    echo "<div class='navegacion'><a href='index.php?action=list'>Volver al listado</div>";
+
+    ?>
+
+</main>
