@@ -17,15 +17,19 @@ echo "<p>Pulsa aquí para reiniciar el contador</p>";
 
 ?>
 
-<form action="#" method="get">
-    <input type="submit" name="boton" value="Reiniciar"></input>
-</form>
+<div
+    style="height: 24px; width: 215px; border: solid 1px grey; margin-top: 20px; padding:10px; background-color:white; font-size:1.1em">
+    <a href="./contador_visitas.php?reiniciar=true">Reiniciar</a>
+</div>
 
 <?php
 
-if (isset($_GET["boton"])) {
-    setcookie("contador", $visitas, 1);
-    unset($_GET["boton"]);
+if (isset($_GET["reiniciar"])) {
+
+    if (($_GET["reiniciar"]) == true) {
+        setcookie("contador", $visitas, 1);
+        ($_GET["reiniciar"]) == false;
+    }
 }
 
 
