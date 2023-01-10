@@ -1,7 +1,7 @@
-<h1>Añadir nueva nota</h1>
+<h1>Crear nueva nota</h1>
 <main>
 
-    <div class=nuevaNota>
+    <div class="formNota">
 
         <form action="index.php?action=insert" method="post">
             <p>
@@ -13,7 +13,7 @@
                 <textarea name="content"></textarea>
             </p>
             <div>
-                <input type="submit" value="Añadir" id="submit">
+                <input type="submit" value="Crear nueva nota" id="submit">
             </div>
         </form>
 

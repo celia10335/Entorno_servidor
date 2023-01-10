@@ -21,6 +21,7 @@ class Controlador
     // Mostrar notas almacenadas
     public function list()
     {
+        $this->vista = "list";
         $this->titulo_pag = "Listado de notas";
         return $this->objetoNotas->getNotes();
     }

@@ -5,6 +5,7 @@
 echo "<h1>Listado de notas</h1>";
 echo "<main>";
 
+
 if (count($datos) > 0) {
     foreach ($datos as $n) {
         echo "<div class='contenedor'>";

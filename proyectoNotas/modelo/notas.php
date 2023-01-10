@@ -50,7 +50,7 @@ class NoteTable
     public function getNotes()
     {
         $this->getConection();
-        $sql = "SELECT * FROM " . $this->tabla;
+        $sql = "SELECT * FROM note";
         $result = $this->conection->query($sql);
 
         if ($result->num_rows > 0) {
@@ -60,6 +60,8 @@ class NoteTable
                 $i++;
             }
         }
+
+        return $this->notas;
     }
 
 
