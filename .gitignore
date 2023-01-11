@@ -3,3 +3,9 @@
 *.drawio
 EXAMEN-20octubre/
 expresionesRegu.html
+
+#para dejar de rastrear un archivo ya añadido:
+#git -rm --cache nombre.extension
+
+#para dejar de rastrear un directorio ya añadido:
+#git -rm -r --cache nombre_directorio
