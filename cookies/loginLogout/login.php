@@ -1,19 +1,19 @@
 <?php
- session_start();
+//echo "debug<br>";
+//echo $_GET['nomUsuario'];
+session_start();
 
-if ($_GET['nomUsuario'] == "Admin") {
+ if ($_GET['nomUsuario'] == "Admin" && $_GET['contras'] == "admin") {
 
 $_SESSION['usuario'] = 'Admin';
 
-echo "Sesión iniciada";
-
+header('Location: https://localhost/php/Entorno_servidor/cookies/loginLogout/');
 
 }
 
-else{
-   //header(location './index.php');
-   echo "No existe el usuario";
-}
-// //unset($_SESSION);
-// //session_destroy();
+ else{
+   echo "<p style='font-style: italic; color: lightcoral'>No existe el usuario o los datos son incorrectos, inténtelo de nuevo</p>";
+
+   include_once './iniciaSesion.php';
+ }
 ?>
