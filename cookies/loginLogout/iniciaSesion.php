@@ -1,3 +1,5 @@
+<!-- Vista de formulario para iniciar sesión -->
+
 <div style='border: solid cadetblue 2px; width: 800px; padding: 0 20px 20px 20px'>
 
 <h3>Inicia sesión:</h3>
