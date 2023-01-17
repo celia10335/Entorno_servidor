@@ -28,16 +28,19 @@ session_start();
 
 <?php
 
+// Si se recibe $_GET['vaciar], la sesión se destruye, ya no queda guardado el último color
 if (isset($_GET["vaciar"])) {
     session_destroy();
 }
 
+// El color seleccionado se almacena en una variable de sesión. Si existe, se carga ese color; si no, por defecto el color es blanco.
 if (isset($_SESSION["color"])) {
     $color = $_SESSION["color"];
 } else {
     $color = "white";
 }
 
+// Si el usuario selecciona un color, se almacena en la variable de sesión.
 if (isset($_GET["color"])) {
     $color = $_GET["color"];
     $_SESSION["color"] = $color;

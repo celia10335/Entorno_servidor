@@ -12,6 +12,7 @@
 
 <form action="#" method="get">
     <select name="color">
+    <option value="" disabled selected>--</option>
         <option value="yellow">Amarillo</option>
         <option value="purple">Morado</option>
         <option value="pink">Rosa</option>
@@ -22,8 +23,13 @@
 </form>
 
 <?php
+
+// Le doy un valor por defecto a la variable del color
 $color = "white";
 
+// Si hay una cookie con un valor para el color, se cargará éste.
+// El color que ha seleccionado el usuario y que se pasa al php por método GET, se almacena en $_COOKIE['color'].
+// Si vuelvo a recargar la página, se pierde el valor de la variable GET, por eso, almacenaré también el último color elegido en la variable $_COOKIE['ultimoColor], y le doy una caducidad de 24 horas en milisegundos, desde la fecha y hora en que se recarga por última vez
 if (isset($_COOKIE["ultimoColor"])) {
     $color = $_COOKIE["ultimoColor"];
 }
